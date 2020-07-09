@@ -1,56 +1,168 @@
-var friends = [
-    {
-        name: "Kim Jung Un",
-
-        photo: "https://ichef.bbci.co.uk/news/320/cpsprodpb/FAEC/production/_105863246_052682295.jpg",
-
-        scores: [5, 2, 5, 2, 2, 2, 4, 3, 2, 3]
-    },
-    {
-        name: "Xi Jinping",
-
-        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Xi_Jinping_2019.jpg/220px-Xi_Jinping_2019.jpg",
-
-        scores: [4, 2, 5, 1, 2, 4, 2, 5, 4, 2]
-    },
-    {
-        name: "Vladamir Putin",
-
-        photo: "https://cdn.cnn.com/cnnnext/dam/assets/200618182033-putin-0618-large-169.jpg",
-
-        scores: [5, 4, 5, 5, 5, 3, 4, 5, 4, 3]
-    },
-    {
-        name: "Arnold Schwarzenegger",
-
-        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Arnold_Schwarzenegger_1974.jpg/220px-Arnold_Schwarzenegger_1974.jpg",
-
-        scores: [5, 5, 3, 3, 4, 4, 4, 5, 5, 5]
-    },
-    {
-        name: "Paris Hilton",
-
-        photo: "https://i.dailymail.co.uk/1s/2020/05/02/17/27925940-8280705-Fan_love_Paris_Hilton_above_February_2020_loves_her_fans_so_much-m-20_1588435975335.jpg",
-
-        scores: [5, 3, 5, 5, 1, 4, 5, 2, 5, 5]
-    },
-    {
-        name: "Mark Zuckerberg",
-
-        photo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
-
-        scores: [3, 3, 5, 2, 2, 2, 2, 5, 5, 1]
-    },
-    {
-        name: "Genghis Khan",
-
-        photo: "https://cdn.britannica.com/73/121673-050-4FE5679B/Genghis-Khan-ink-colour-silk-Taipei-Taiwan.jpg",
-
-        scores: [5, 3, 3, 3, 3, 3, 3, 4, 4, 4]
-    }
+// Data structure that will store the friends data
+var friendsArray = [
+	{
+		name: 'Kim Jung Un',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Kim_Jong-un_April_2019_%28cropped%29.jpg/220px-Kim_Jong-un_April_2019_%28cropped%29.jpg',
+		scores: [
+			'1',
+			'5',
+			'5',
+			'1',
+			'5',
+			'5',
+			'1',
+			'1',
+			'1',
+			'5'
+		]
+	},
+	{
+		name: 'Xi Jinping',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Xi_Jinping_2019.jpg',
+		scores: [
+			'2',
+			'4',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'2',
+			'1',
+			'5'
+		]
+	},
+	{
+		name: 'Greta Thunberg',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Greta_Thunberg_urges_MEPs_to_show_climate_leadership_%2849618310531%29_%28cropped%29.jpg',
+		scores: [
+			'4',
+			'3',
+			'5',
+			'1',
+			'1',
+			'5',
+			'5',
+			'1',
+			'1',
+			'1'
+		]
+	},
+	{
+		name: 'Richard Nixon',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Richard_Nixon_presidential_portrait.jpg/220px-Richard_Nixon_presidential_portrait.jpg',
+		scores: [
+			'5',
+			'1',
+			'2',
+			'1',
+			'3',
+			'4',
+			'1',
+			'3',
+			'3',
+			'4'
+		]
+	},
+	{
+		name: 'Kurt Cobain',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/5/59/Kurt_St_Thomas_1991_cropped.jpg',
+		scores: [
+			'1',
+			'1',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'1'
+		]
+	},
+	{
+		name: 'Tupac',
+		photo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Tupac_Amaru_Shakur2.jpg/220px-Tupac_Amaru_Shakur2.jpg',
+		scores: [
+			'1',
+			'1',
+			'5',
+			'1',
+			'3',
+			'2',
+			'5',
+			'1',
+			'1',
+			'5'
+		]
+	},
+	{
+		name: 'Wilt Chamberlain',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7f/Wilt_Chamberlain3.jpg',
+		scores: [
+			'5',
+			'4',
+			'4',
+			'2',
+			'4',
+			'4',
+			'3',
+			'2',
+			'3',
+			'3'
+		]
+	},
+	{
+		name: 'Kim Jong Il',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Kim_Jong-il_on_August_24%2C_2011_%28mini%29.jpg',
+		scores: [
+			'5',
+			'2',
+			'3',
+			'1',
+			'5',
+			'1',
+			'3',
+			'1',
+			'1',
+			'5'
+		]
+	},
+	{
+		name: 'Ted Bundy',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Ted_Bundy_headshot.jpg',
+		scores: [
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5',
+			'5'
+		]
+	},
+	{
+		name: 'Bernie',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Bernie_Sanders_in_March_2020.jpg',
+		scores: [
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1',
+			'1'
+		]
+	}
 ];
-//export default friends;
-module.exports = friends;
+
+module.exports = friendsArray;
 
 
 

@@ -1,6 +1,7 @@
-var friends = require("../data/friends.js").default;
+var friends = require("../data/friends");
 
 module.exports = function (app) {
+   //Why is the rotue "/api/friends" I do nto have a folder named api ?
     app.get("/api/friends", function (req, res) {
         res.json(friends);
     });
@@ -8,7 +9,7 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         var totalDifference = 0;
 
-        var bestmatch = {
+        var bestMatch = {
             name: "",
             photo: "",
             friendDifference: 1000
@@ -18,7 +19,7 @@ module.exports = function (app) {
         var userName = userData.name;
         var userScores = userData.scores;
 
-        var b = userScores.map(function (item) {
+        var b = userScores.map(function(item) {
             return parseInt(item, 10);
         });
         userData = {
@@ -26,6 +27,7 @@ module.exports = function (app) {
             photo: req.body.photo,
             scores: b
         };
+
         console.log("Name: " + userName);
         console.log("User Score" + userScores);
 
@@ -56,7 +58,7 @@ module.exports = function (app) {
         console.log(bestMatch);
 
         friends.push(userData);
-        console.log("New user added");
+        console.log("New User added");
         console.log(userData);
         res.json(bestMatch);
     });

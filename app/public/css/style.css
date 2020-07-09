@@ -1,23 +1,35 @@
-.jumbotron {
-    background: #929292;
-}
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.body {
-    background: #e4ebf1;
+body {
+    width: 75%;
+    margin: 0px auto;
 
+    display: flex; 
+    min-height: 100vh;
+    flex-direction: column;
 }
-hr {
-    border-color: inherit;
-    margin: 1em 0;
+header {height: 100%;
 }
-.Mntitle {
-    color:whitesmoke
+header > nav {
+    height: 100%;
+    color: violet;
 }
-#resultModal img {
-    overflow: hidden;
-    width: 500px;
+main {
+    flex: 1 0 auto;
 }
+main h1 {
+    font-weight: bolder;
+}
+main h2 {
+    font-weight: 300;
+}
+
+#logo-icon {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.mainpanel{
+    margin:50px
+}
+#mainpanel-content {
+    margin:50px
+}
+
