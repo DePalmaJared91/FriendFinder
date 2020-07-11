@@ -1,65 +1,59 @@
-var friends = require("../data/friends");
+// Pull in required dependencies
+var path = require('path');
 
-module.exports = function (app) {
-   //Why is the rotue "/api/friends" I do nto have a folder named api ?
-    app.get("/api/friends", function (req, res) {
-        res.json(friends);
+// Import the list of friend entries
+var friends = require('../data/friends.js');
+
+// Export API routes
+module.exports = function(app) {
+	// console.log('___ENTER apiRoutes.js___');
+
+	// Total list of friend entries
+	app.get('/api/friends', function(req, res) {
+		res.json(friends);
+	});
+
+	// Add new friend entry
+	app.post('/api/friends', function(req, res) {
+		// Capture the user input object
+		var userInput = req.body;
+		// console.log('userInput = ' + JSON.stringify(userInput));
+
+		var userResponses = userInput.scores;
+		// console.log('userResponses = ' + userResponses);
+
+		// Compute best friend match
+		var matchName = '';
+		var matchImage = '';
+		var totalDifference = 10000; // Make the initial value big for comparison
+
+		// Examine all existing friends in the list
+		for (var i = 0; i < friends.length; i++) {
+			// console.log('friend = ' + JSON.stringify(friends[i]));
+
+			// Compute differenes for each question
+			var diff = 0;
+			for (var j = 0; j < userResponses.length; j++) {
+				diff += Math.abs(friends[i].scores[j] - userResponses[j]);
+			}
+			// console.log('diff = ' + diff);
+
+			// If lowest difference, record the friend match
+			if (diff < totalDifference) {
+				// console.log('Closest match found = ' + diff);
+				// console.log('Friend name = ' + friends[i].name);
+				// console.log('Friend image = ' + friends[i].photo);
+
+				totalDifference = diff;
+				matchName = friends[i].name;
+				matchImage = friends[i].photo;
+			}
+		}
+
+		// Add new user
+		friends.push(userInput);
+
+		// Send appropriate response
+		res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
     });
-
-    app.post("/api/friends", function (req, res) {
-        var totalDifference = 0;
-
-        var bestMatch = {
-            name: "",
-            photo: "",
-            friendDifference: 1000
-        };
-
-        var userData = req.body;
-        var userName = userData.name;
-        var userScores = userData.scores;
-
-        var b = userScores.map(function(item) {
-            return parseInt(item, 10);
-        });
-        userData = {
-            name: req.body.name,
-            photo: req.body.photo,
-            scores: b
-        };
-
-        console.log("Name: " + userName);
-        console.log("User Score" + userScores);
-
-        var sum = b.reduce((a, b) => a + b, 0);
-
-        console.log("Sum of users score " + sum);
-        console.log("Best match friend diff " + bestMatch.friendDifference);
-        console.log("+++++++=================++++++++++");
-
-        for (var i = 0; i < friends.length; i++) {
-            console.log(friends[i].name);
-            totalDifference = 0;
-            console.log("Total Diff " + totalDifference);
-            console.log("Best match friend diff " + bestMatch.friendDifference);
-
-            var bfriendScore = friends[i].scores.reduce((a, b) => a + b, 0);
-            console.log("Total friend score " + bfriendScore);
-            totalDifference += Math.abs(sum - bfriendScore);
-            console.log("-------------------------> " + totalDifference);
-
-            if (totalDifference <= bestMatch.friendDifference) {
-                bestMatch.name = friends[i].name;
-                bestMatch.photo = friends[i].photo
-                bestMatch.friendDifference = totalDifference;
-            }
-            console.log(totalDifference + " Total Difference");
-        }
-        console.log(bestMatch);
-
-        friends.push(userData);
-        console.log("New User added");
-        console.log(userData);
-        res.json(bestMatch);
-    });
-};
+}
