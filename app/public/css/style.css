@@ -1,35 +1,54 @@
 body {
-    width: 75%;
+    width: 90%;
     margin: 0px auto;
 
     display: flex; 
     min-height: 100vh;
     flex-direction: column;
 }
-header {height: 100%;
+header {
+    height: 100%;
 }
+h3 {
+    text-align: center;
+    color: darkcyan;
+
+}
+
 header > nav {
     height: 100%;
-    color: violet;
+    color: black;
+    
 }
 main {
     flex: 1 0 auto;
 }
 main h1 {
-    font-weight: bolder;
+    font-weight: bold;
+    color: darkcyan;
+    background-color: sandybrown;
+    border-radius: 25px;
+    text-align: center;
+
 }
 main h2 {
     font-weight: 300;
+    
 }
-
+footer.page-footer.pink.accent{
+    color: blue;
+}
 #logo-icon {
     margin-left: 50px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .mainpanel{
     margin:50px
+    
 }
 #mainpanel-content {
     margin:50px
+    
 }
 
