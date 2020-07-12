@@ -11,6 +11,7 @@ header {
 }
 h2 {
     text-align: center;
+    font-weight: bold;
     color: lightgoldenrodyellow;
 }
 h3 {
@@ -19,22 +20,21 @@ h3 {
 }
 h5 {
     color: darkcyan;
-    text-align: center;
+    text-align: left;
     }
 
 header > nav {
     height: 100%;
-    color: black;
-    
+    color: lightgoldenrodyellow;
 }
 main {
     flex: 1 0 auto;
     background-color: lightskyblue;
+    border-color: darkred;
 }
 main h1 {
     font-weight: bold;
-    color:lightgoldenrodyellow ;
-    background-color: darkcyan;
+    color:lightgoldenrodyellow;
     border-radius: 25px;
     text-align: center;
 
@@ -43,7 +43,11 @@ main h2 {
     font-weight: 300;
     
 }
-footer.page-footer.pink.accent{
+#container { 
+    text-align: center;
+   }
+
+footer.page-footer.blue.accent{
     color: darkcyan;
 }
 #logo-icon {
@@ -60,6 +64,6 @@ footer.page-footer.pink.accent{
     margin:25px;
     border-radius: 25px; 
 }
-
-
-
+#a{ 
+text-align: center;
+}
