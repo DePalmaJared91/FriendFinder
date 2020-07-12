@@ -4,15 +4,15 @@ var friendsArray = [
 		name: 'Kim Jung Un',
 		photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Kim_Jong-un_April_2019_%28cropped%29.jpg/220px-Kim_Jong-un_April_2019_%28cropped%29.jpg',
 		scores: [
-			'1',
 			'5',
 			'5',
-			'1',
+			'3',
+			'2',
 			'5',
 			'5',
-			'1',
-			'1',
-			'1',
+			'4',
+			'5',
+			'3',
 			'5'
 		]
 	},
@@ -70,10 +70,10 @@ var friendsArray = [
 		scores: [
 			'1',
 			'1',
+			'3',
 			'5',
 			'5',
-			'5',
-			'5',
+			'3',
 			'5',
 			'5',
 			'5',

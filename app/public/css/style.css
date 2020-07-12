@@ -9,11 +9,18 @@ body {
 header {
     height: 100%;
 }
+h2 {
+    text-align: center;
+    color: lightgoldenrodyellow;
+}
 h3 {
     text-align: center;
-    color: darkcyan;
-
+    color: lightgoldenrodyellow;
 }
+h5 {
+    color: darkcyan;
+    text-align: center;
+    }
 
 header > nav {
     height: 100%;
@@ -22,11 +29,12 @@ header > nav {
 }
 main {
     flex: 1 0 auto;
+    background-color: lightskyblue;
 }
 main h1 {
     font-weight: bold;
-    color: darkcyan;
-    background-color: sandybrown;
+    color:lightgoldenrodyellow ;
+    background-color: darkcyan;
     border-radius: 25px;
     text-align: center;
 
@@ -36,7 +44,7 @@ main h2 {
     
 }
 footer.page-footer.pink.accent{
-    color: blue;
+    color: darkcyan;
 }
 #logo-icon {
     margin-left: 50px;
@@ -46,9 +54,12 @@ footer.page-footer.pink.accent{
 .mainpanel{
     margin:50px
     
-}
-#mainpanel-content {
-    margin:50px
     
 }
+#mainpanel-content {
+    margin:25px;
+    border-radius: 25px; 
+}
+
+
 
